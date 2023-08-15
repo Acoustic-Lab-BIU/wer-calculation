@@ -115,7 +115,7 @@ def get_total_wer(print_results=False):
         print('WER: {:10.3%} ({:10d} / {:10d})'.format(wer, error_count, ref_token_count))
         print('WRR: {:10.3%} ({:10d} / {:10d})'.format(wrr, match_count, ref_token_count))
 
-    return wer
+    return wer, error_count, ref_token_count
 
 
 def process_line_pair(ref_line, hyp_line, case_insensitive=False, remove_empty_refs=False, return_values=False):
