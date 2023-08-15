@@ -7,6 +7,52 @@
 Python module for evaluting ASR hypotheses (i.e. word error rate and word
 recognition rate).
 
+### BIU CHANGES
+
+here's a simple example
+
+```
+from asr_evaluation import asr_evaluation as asr
+
+ref = 'hello my name is ari it is nice to meet you'
+hyp = 'hi my name is eri it is mice to meet you'
+
+wer = asr.process_line_pair(ref, hyp, return_values=True)
+
+print(wer)
+
+ref = 'calculate for another sentence'
+hyp = 'culculute fir anithir sintince'
+
+wer = asr.process_line_pair(ref, hyp, return_values=True)
+
+print(wer)
+
+asr.get_total_wer(print_results=True)
+```
+
+output:
+
+```
+>0.2727272727272727
+>1.0
+>WER:    46.667% (         7 /         15)
+>WRR:    53.333% (         8 /         15)
+>SER:     0.000% (         2 /          0)
+```
+
+to get the WER per sentence, use `process_line_pair` and make sure to set `return_values=True`
+
+to get the total WER use `get_total_wer`
+arguments:
+print_results, wer_only
+
+if `wer_only` is set to False, the return value will be a tuple:
+
+`(Word Error Rate, Word Right Rate, Sentence Error Rate)` `
+
+---
+
 This module depends on the [editdistance](https://github.com/belambert/edit-distance)
 project, for computing edit distances between arbitrary sequences.
 
