@@ -68,7 +68,7 @@ The program outputs three standard measurements:
 ## Installing & uninstalling
 
     git clone git@github.com:Acoustic-Lab-BIU/wer-calculation.git
-    cd asr-evaluation
+    cd wer-calculation
     python3 setup.py install
 
 to confirm you have the correct version:
