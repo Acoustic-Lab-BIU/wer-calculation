@@ -94,16 +94,13 @@ def main(args):
     print('WRR: {:10.3%} ({:10d} / {:10d})'.format(wrr, match_count, ref_token_count))
     print('SER: {:10.3%} ({:10d} / {:10d})'.format(ser, sent_error_count, counter))
 
-def get_total_wer(print_results=False, wer_only=True):
+def get_total_wer(print_results=False):
     """get the total wer after processing all line pairs 
     using the process_line_pair function.
 
     set print to True to print the results
 
-    if wer_only is true, returns only the WER
-
-    else returns a typle
-    (Word Error Rate, Word Right Rate, Sentence Error Rate)
+    returns the WER as a float
     """
 
     if ref_token_count > 0:
@@ -117,11 +114,8 @@ def get_total_wer(print_results=False, wer_only=True):
     if print_results:
         print('WER: {:10.3%} ({:10d} / {:10d})'.format(wer, error_count, ref_token_count))
         print('WRR: {:10.3%} ({:10d} / {:10d})'.format(wrr, match_count, ref_token_count))
-        print('SER: {:10.3%} ({:10d} / {:10d})'.format(ser, sent_error_count, counter))
-    if wer_only:
-        return wer
-    else:
-        return wer, wrr, ser
+
+    return wer
 
 
 def process_line_pair(ref_line, hyp_line, case_insensitive=False, remove_empty_refs=False, return_values=False):
