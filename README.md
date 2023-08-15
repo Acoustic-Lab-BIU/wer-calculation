@@ -45,6 +45,9 @@ to get the WER per sentence, use `process_line_pair` and make sure to set `retur
 to get the total WER use `get_total_wer`
 arguments:
 print_results
+this will return a tuple
+
+`(wer, error_count, total words)`
 
 ---
 
