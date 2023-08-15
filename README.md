@@ -72,17 +72,15 @@ The program outputs three standard measurements:
 
 ## Installing & uninstalling
 
-The easiest way to install is using pip:
-
-    pip install asr-evaluation
-
-!!this will install the original version!!
-
-Alternatively you can clone this git repo and install using distutils:
-
-    git clone git@github.com:belambert/asr-evaluation.git
+    git clone git@github.com:Acoustic-Lab-BIU/wer-calculation.git
     cd asr-evaluation
-    python setup.py install
+    python3 setup.py install
+
+to confirm you have the correct version:
+
+    pip show asr-evaluation
+
+should show version 2.0.5.2
 
 To uninstall with pip:
 
