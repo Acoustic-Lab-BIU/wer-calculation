@@ -94,7 +94,7 @@ def main(args):
     print('WRR: {:10.3%} ({:10d} / {:10d})'.format(wrr, match_count, ref_token_count))
     print('SER: {:10.3%} ({:10d} / {:10d})'.format(ser, sent_error_count, counter))
 
-def get_total_wer(print=False, wer_only=True):
+def get_total_wer(print_results=False, wer_only=True):
     """get the total wer after processing all line pairs 
     using the process_line_pair function.
 
@@ -114,7 +114,7 @@ def get_total_wer(print=False, wer_only=True):
         wer = 0.0
     # Compute SER
     ser = sent_error_count / counter if counter > 0 else 0.0
-    if print:
+    if print_results:
         print('Sentence count: {}'.format(counter))
         print('WER: {:10.3%} ({:10d} / {:10d})'.format(wer, error_count, ref_token_count))
         print('WRR: {:10.3%} ({:10d} / {:10d})'.format(wrr, match_count, ref_token_count))
